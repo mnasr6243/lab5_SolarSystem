@@ -1,0 +1,21 @@
+{
+  "name": "npm-solarsystem",
+  "version": "1.1.5",
+  "description": "Solar System Package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "mawais54013/Solar-System",
+  "keywords": [
+    "solar system",
+    "pluto",
+    "saturn",
+    "earth",
+    "solar",
+    "jupiter",
+    "venus"
+  ],
+  "author": "mawais54013",
+  "license": "ISC"
+}
