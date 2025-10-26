@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Solar System</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link href="/css/styles.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</head>
-
 <body>
 
     <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
     <%- include("partials/navbar.ejs") %>
+    <%- include("partials/header.ejs") %>
 
     <h2> <%= planet_name %> </h2>
 
     <%=planetInfo.description%>
-    <br>
+
+    <ul>
+        <li>Distance from sun: <%=planetInfo.distanceFromSun%></li>
+        <li>Year Length: <%=planetInfo.yearLength%></li>
+        <li>Radius: <%=planetInfo.radius%></li>
+        <li><a href="<%=planetInfo.websiteLink%>" target=blank >Website link:</a></li>
+        <li>One Earth Day: <%=planetInfo.oneEarthDay%></li>
+        <li>Moons: <%=planetInfo.moons%></li>
+
+    </ul> <br>
+
     <img src="<%=planetInfo.image %>" width="300">
 
+    <%- include("partials/footer.ejs") %>
 
 </body>
-
 </html>
