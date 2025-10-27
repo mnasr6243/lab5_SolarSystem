@@ -32,6 +32,11 @@ app.get('/sun.ejs', (req, res) => {
    res.render('sun.ejs', {sunInfo});
 });
 
+// Meteorites route
+app.get('/meteorites.ejs', (req, res) => {
+   let meteoriteInfo = solarSystem.getMeteorite();
+   res.render('meteorites.ejs', {meteoriteInfo});
+});
 
 // NASAPOD route
 app.get('/NASAPOD.ejs', (req, res) => {
