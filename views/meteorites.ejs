@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/header.ejs") %>
+
+    <h2> Meteorites </h2>
+
+    <ul>
+        <li>Metors: <%=meteoriteInfo.meteors%></li>
+        <li>Meteorite: <%=meteoriteInfo.meteorite%></li>
+        <li>Meteor Showers: <%=meteoriteInfo.meteorShowers%> <a href="<%=meteoriteInfo.meteorShowerLink%>" target=blank> Meteor Shower Link</a></li>
+    </ul> <br>
+
+    <img id="planet_Img" src="<%=meteoriteInfo.image %>" width="300">
+
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>
