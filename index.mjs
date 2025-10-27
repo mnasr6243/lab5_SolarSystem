@@ -55,20 +55,26 @@ app.get('/comets.ejs', (req, res) => {
    res.render('comets.ejs', {cometsInfo});
 });
 
-// Ineffecient method
-// //Mercury route
-// app.get('/mercury', (req, res) => {
-//    let planetInfo = solarSystem.getMercury();
-//    console.log(planetInfo);
-//    res.render('mercury.ejs', {planetInfo});
-// });
+// Mars route
+app.get('/mars.ejs', (req, res) => {
+   let planetInfo = solarSystem.getMars();
+   console.log(planetInfo);
+   res.render('mars.ejs', {planetInfo});
+});
 
-// //Venus route
-// app.get('/venus', (req, res) => {
-//    let planetInfo = solarSystem.getVenus();
-//    console.log(planetInfo);
-//    res.render('venus.ejs', {planetInfo});
-// });
+// Jupiter route
+app.get('/jupiter.ejs', (req, res) => {
+   let planetInfo = solarSystem.getJupiter();
+   console.log(planetInfo);
+   res.render('jupiter.ejs', {planetInfo});
+});
+
+// Pluto route
+app.get('/pluto.ejs', (req, res) => {
+   let planetInfo = solarSystem.getPluto();
+   console.log(planetInfo);
+   res.render('pluto.ejs', {planetInfo});
+});
 
 app.listen(3000, () => {
    console.log('server started');

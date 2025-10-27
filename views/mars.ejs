@@ -11,7 +11,7 @@
     <div class="row g-4">
       <section class="col-12 col-lg-8">
         <article class="p-3 border rounded-3 shadow-sm bg-white">
-          <h2 class="h3"> <%= planet_name %> </h2>
+          <h2 class="h3"> Mars </h2>
           <p class="small text-muted mb-2"><%= planetInfo.description %></p>
           <ul>
             <li>Distance from Sun: <%= planetInfo.distanceFromSun %></li>
@@ -21,11 +21,11 @@
             <li>Moons: <%= planetInfo.moons %></li>
             <li>
               <a href="<%= planetInfo.websiteLink %>" target="_blank" rel="noopener">
-                <%= planet_name %> Website Link
+                Mars Website Link
               </a>
             </li>
           </ul>
-          <img id="planet_Img" src="<%= planetInfo.image %>" alt="<%= planet_name %> image" class="img-fluid w-100">
+          <img id="planet_Img" src="/images/planets/mars.png" alt="Mars image">
         </article>
       </section>
       <aside class="col-12 col-lg-4">
