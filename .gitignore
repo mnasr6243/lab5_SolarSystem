@@ -1,1 +1,2 @@
+# Github will ignore .env files to hide API key
 .env
