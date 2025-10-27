@@ -26,7 +26,7 @@ app.get('/', async (req, res) => {
   } catch (err) {
     console.error('Pixabay fetch failed:', err.message);
     // Fallback image if API fails
-    res.render('home.ejs', { randomImageURL: '/images/home/fallback.jpg' });
+    res.render('home.ejs', { randomImageURL: 'public/images/home/fallback.jpg' });
   }
 });
 
