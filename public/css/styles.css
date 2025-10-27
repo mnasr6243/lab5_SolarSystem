@@ -1,6 +1,6 @@
-/* body {
+body {
     color: black;
-} */
+}
 
 #randomSpaceImg {
     height: 100%;
@@ -25,9 +25,10 @@ h6, ul, li {
 }
 
 footer {
+    color: white;
     border-radius: 1px;
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 0rem;
     padding: 1rem;
     background: linear-gradient(to bottom, black, red);
     box-shadow: 0px -5px 15px black;
