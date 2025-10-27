@@ -25,7 +25,7 @@
               </a>
             </li>
           </ul>
-          <img id="planet_Img" src="<%= planetInfo.image %>" alt="<%= planet_name %> image" loading="lazy">
+          <img id="planet_Img" src="<%= planetInfo.image %>" alt="<%= planet_name %> image" loading="lazy" onerror="this.onerror=null; this.src='/images/planets/fallback.jpg';" class="img-fluid w-100">
         </article>
       </section>
       <aside class="col-12 col-lg-4">
