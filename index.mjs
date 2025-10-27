@@ -12,18 +12,20 @@ app.use(express.static("public"));
 //Main route
 app.get('/', async (req, res) => {
   const apiKey = process.env.PIXABAY_KEY;
-  const url = `https://pixabay.com/api/?key=${apiKey}&per_page=50&orientation=horizontal&q=solar system`;
+  const url = `https://pixabay.com/api/?key=${apiKey}&per_page=50&orientation=horizontal&q=solar+system`;
+
   try {
-    const riResponse = await fetch(encodeURI(url));
-    const riData = await riResponse.json();
-    const hits = Array.isArray(riData?.hits) ? riData.hits : [];
-    const randomNumber = hits.length ? Math.floor(Math.random() * hits.length) : 0;
-    const randomImageURL = hits.length
-      ? hits[randomNumber].largeImageURL
-      : '/images/home/fallback.jpg'; // place a fallback image in public/images/home/
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Pixabay API request failed');
+
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.hits.length);
+    const randomImageURL = data.hits[randomIndex].largeImageURL;
+
     res.render('home.ejs', { randomImageURL });
   } catch (err) {
-    console.error('Pixabay fetch failed:', err);
+    console.error('Pixabay fetch failed:', err.message);
+    // Fallback image if API fails
     res.render('home.ejs', { randomImageURL: '/images/home/fallback.jpg' });
   }
 });
