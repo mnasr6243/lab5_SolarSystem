@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("partials/header.ejs") %>
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+  <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
-    <%- include("partials/navbar.ejs") %>
-    <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
 
-    <h2> <%= planet_name %> </h2>
+  <main class="container my-4">
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <article class="p-3 border rounded-3 shadow-sm bg-white">
+          <h2 class="h3"> <%= planet_name %> </h2>
+          <p class="small text-muted mb-2"><%= planetInfo.description %></p>
+          <ul>
+            <li>Distance from Sun: <%= planetInfo.distanceFromSun %></li>
+            <li>Year Length: <%= planetInfo.yearLength %></li>
+            <li>Radius: <%= planetInfo.radius %></li>
+            <li>One Earth Day: <%= planetInfo.oneEarthDay %></li>
+            <li>Moons: <%= planetInfo.moons %></li>
+            <li>
+              <a href="<%= planetInfo.websiteLink %>" target="_blank" rel="noopener">
+                <%= planet_name %> Website Link
+              </a>
+            </li>
+          </ul>
+          <img id="planet_Img" src="<%= planetInfo.image %>" alt="<%= planet_name %> image">
+        </article>
+      </section>
+      <aside class="col-12 col-lg-4">
+        <div class="p-3 border rounded-3 bg-light">
+          <h3 class="h5">More</h3>
+          <ul class="mb-0">
+            <li><a href="/sun.ejs">About the Sun</a></li>
+            <li><a href="/meteorites.ejs">Meteorites</a></li>
+            <li><a href="/asteroids.ejs">Asteroids</a></li>
+            <li><a href="/comets.ejs">Comets</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-    <h6><%=planetInfo.description%></h6>
-
-    <ul>
-        <li>Distance from sun: <%=planetInfo.distanceFromSun%></li>
-        <li>Year Length: <%=planetInfo.yearLength%></li>
-        <li>Radius: <%=planetInfo.radius%></li>
-        <li><a href="<%=planetInfo.websiteLink%>" target=blank> <%= planet_name %> Website Link</a></li>
-        <li>One Earth Day: <%=planetInfo.oneEarthDay%></li>
-        <li>Moons: <%=planetInfo.moons%></li>
-
-    </ul> <br>
-
-    <img id="planet_Img" src="<%=planetInfo.image %>" width="300">
-
-    <%- include("partials/footer.ejs") %>
-
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>

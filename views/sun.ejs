@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("partials/header.ejs") %>
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+  <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
-    <%- include("partials/navbar.ejs") %>
-    <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
 
-    <h2> Sun </h2>
+  <main class="container my-4">
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <article class="p-3 border rounded-3 shadow-sm bg-white">
+          <h2 class="h3">Sun</h2>
+          <p class="small text-muted mb-2"><%= sunInfo.description %></p>
+          <ul>
+            <li>Radius: <%= sunInfo.radius %></li>
+            <li><a href="<%= sunInfo.websiteLink %>" target="_blank" rel="noopener">Website Link</a></li>
+          </ul>
+          <img id="planet_Img" src="<%= sunInfo.image %>" alt="Sun image">
+        </article>
+      </section>
+      <aside class="col-12 col-lg-4">
+        <div class="p-3 border rounded-3 bg-light">
+          <h3 class="h5">Related</h3>
+          <ul class="mb-0">
+            <li><a href="/planet?planetName=Mercury">Mercury</a></li>
+            <li><a href="/planet?planetName=Earth">Earth</a></li>
+            <li><a href="/asteroids.ejs">Asteroids</a></li>
+            <li><a href="/comets.ejs">Comets</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-    <h6><%=sunInfo.description%></h6>
-
-    <ul>
-        <li>Radius: <%=sunInfo.radius%></li>
-        <li><a href="<%=sunInfo.websiteLink%>" target=blank> Website Link</a></li>
-    </ul> <br>
-
-    <img id="planet_Img" src="<%=sunInfo.image %>" width="300">
-
-    <%- include("partials/footer.ejs") %>
-
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>

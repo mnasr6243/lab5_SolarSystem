@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("partials/header.ejs") %>
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+  <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
-    <%- include("partials/navbar.ejs") %>
-    <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
 
-    <h2> Comets </h2>
+  <main class="container my-4">
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <article class="p-3 border rounded-3 shadow-sm bg-white">
+          <h2 class="h3">Comets</h2>
+          <ul>
+            <li>Definition: <%= cometsInfo.def %></li>
+            <li><a href="<%= cometsInfo.link %>" target="_blank" rel="noopener">Comets Link</a></li>
+          </ul>
+          <img id="planet_Img" src="<%= cometsInfo.image %>" alt="Comets image">
+        </article>
+      </section>
+      <aside class="col-12 col-lg-4">
+        <div class="p-3 border rounded-3 bg-light">
+          <h3 class="h5">Explore</h3>
+          <ul class="mb-0">
+            <li><a href="/meteorites.ejs">Meteorites</a></li>
+            <li><a href="/asteroids.ejs">Asteroids</a></li>
+            <li><a href="/sun.ejs">Sun</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-    <ul>
-        <li>Definition: <%=cometsInfo.def%></li>
-        <li><a href="<%=cometsInfo.link%>" target=blank> Comets Link</a></li>
-    </ul> <br>
-
-    <img id="planet_Img" src="<%=cometsInfo.image %>" width="300">
-
-    <%- include("partials/footer.ejs") %>
-
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>

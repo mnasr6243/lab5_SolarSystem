@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("partials/header.ejs") %>
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+  <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
-    <%- include("partials/navbar.ejs") %>
-    <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
 
-    <h2> Meteorites </h2>
+  <main class="container my-4">
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <article class="p-3 border rounded-3 shadow-sm bg-white">
+          <h2 class="h3">Meteorites</h2>
+          <ul>
+            <li>Meteors: <%= meteoriteInfo.meteors %></li>
+            <li>Meteorite: <%= meteoriteInfo.meteorite %></li>
+            <li>Meteor Showers: <%= meteoriteInfo.meteorShowers %></li>
+            <li>
+              <a href="<%= meteoriteInfo.meteorShowerLink %>" target="_blank" rel="noopener">
+                Meteors & Meteorites Facts
+              </a>
+            </li>
+          </ul>
+          <img id="planet_Img" src="<%= meteoriteInfo.image %>" alt="Meteorites image">
+        </article>
+      </section>
+      <aside class="col-12 col-lg-4">
+        <div class="p-3 border rounded-3 bg-light">
+          <h3 class="h5">Explore</h3>
+          <ul class="mb-0">
+            <li><a href="/asteroids.ejs">Asteroids</a></li>
+            <li><a href="/comets.ejs">Comets</a></li>
+            <li><a href="/sun.ejs">Sun</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-    <ul>
-        <li>Metors: <%=meteoriteInfo.meteors%></li>
-        <li>Meteorite: <%=meteoriteInfo.meteorite%></li>
-        <li>Meteor Showers: <%=meteoriteInfo.meteorShowers%></li>
-        <li><a href="<%=meteoriteInfo.meteorShowerLink%>" target=blank> Meteors & Meteorites Facts</a></li>
-    </ul> <br>
-
-    <img id="planet_Img" src="<%=meteoriteInfo.image %>" width="300">
-
-    <%- include("partials/footer.ejs") %>
-
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>

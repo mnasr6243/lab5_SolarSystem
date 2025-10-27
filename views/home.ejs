@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+<%- include("partials/header.ejs") %>
 <body>
 
-    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+  <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
 
-    <%- include("partials/navbar.ejs") %>
-    <%- include("partials/header.ejs") %>
+  <%- include("partials/navbar.ejs") %>
 
-    <div><img id="randomSpaceImg" src="<%=randomImageURL %>" width="300"></div>
+  <main class="container my-4">
+    <div class="row g-4">
+      <section class="col-12 col-lg-8">
+        <article class="p-3 border rounded-3 shadow-sm bg-white">
+          <h2 class="h4 mb-3">Welcome</h2>
+          <p>Explore the eight planets, plus asteroids and comets.</p>
+          <img id="randomSpaceImg" src="<%= randomImageURL %>" alt="Random Solar System image">
+        </article>
+      </section>
+      <aside class="col-12 col-lg-4">
+        <div class="p-3 border rounded-3 bg-light">
+          <h3 class="h5">Quick Links</h3>
+          <ul class="mb-0">
+            <li><a href="/planet?planetName=Mercury">Mercury</a></li>
+            <li><a href="/planet?planetName=Venus">Venus</a></li>
+            <li><a href="/planet?planetName=Earth">Earth</a></li>
+            <li><a href="/planet?planetName=Mars">Mars</a></li>
+            <li><a href="/planet?planetName=Jupiter">Jupiter</a></li>
+            <li><a href="/planet?planetName=Saturn">Saturn</a></li>
+            <li><a href="/planet?planetName=Uranus">Uranus</a></li>
+            <li><a href="/planet?planetName=Neptune">Neptune</a></li>
+            <li><a href="/asteroids.ejs">Asteroids</a></li>
+            <li><a href="/comets.ejs">Comets</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-    <%- include("partials/footer.ejs") %>
+  <%- include("partials/footer.ejs") %>
 </body>
 </html>
