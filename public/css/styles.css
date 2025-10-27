@@ -3,8 +3,6 @@
 } */
 
 #randomSpaceImg {
-    display: block;
-    margin: 0 auto;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -25,7 +23,7 @@
 footer {
     border-radius: 1px;
     text-align: center;
-    margin-bottom: 0 auto;
+    margin-bottom: 0px;
     padding: 1rem;
     background: linear-gradient(to bottom, black, red);
     box-shadow: 0px -5px 15px black;
