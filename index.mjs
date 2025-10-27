@@ -26,6 +26,11 @@ app.get('/planet', (req, res) => {
    res.render('planetInfo.ejs', {planetInfo, planet_name});
 });
 
+// NASAPOD route
+app.get('/NASAPOD.ejs', (req, res) => {
+   res.render('NASAPOD.ejs');
+});
+
 // Sun route
 app.get('/sun.ejs', (req, res) => {
    let sunInfo = solarSystem.getSun();
@@ -38,9 +43,16 @@ app.get('/meteorites.ejs', (req, res) => {
    res.render('meteorites.ejs', {meteoriteInfo});
 });
 
-// NASAPOD route
-app.get('/NASAPOD.ejs', (req, res) => {
-   res.render('NASAPOD.ejs');
+// Asteroids route
+app.get('/asteroids.ejs', (req, res) => {
+   let asteroidsInfo = solarSystem.getAsteroids();
+   res.render('asteroids.ejs', {asteroidsInfo});
+});
+
+// Comets route
+app.get('/comets.ejs', (req, res) => {
+   let cometsInfo = solarSystem.getComets();
+   res.render('comets.ejs', {cometsInfo});
 });
 
 // Ineffecient method
