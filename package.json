@@ -15,5 +15,13 @@
     "express": "^5.1.0",
     "node-fetch": "^3.3.2",
     "npm-solarsystem": "^1.1.5"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnasr6243/lab5_SolarSystem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mnasr6243/lab5_SolarSystem/issues"
+  },
+  "homepage": "https://github.com/mnasr6243/lab5_SolarSystem#readme"
 }
