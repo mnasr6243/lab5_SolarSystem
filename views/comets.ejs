@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/header.ejs") %>
+
+    <h2> Comets </h2>
+
+    <ul>
+        <li>Definition: <%=cometsInfo.def%></li>
+        <li><a href="<%=cometsInfo.link%>" target=blank> Comets Link</a></li>
+    </ul> <br>
+
+    <img id="planet_Img" src="<%=cometsInfo.image %>" width="300">
+
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>
