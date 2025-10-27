@@ -1,6 +1,3 @@
-import dotenv from 'dotenv';
-dotenv.config();
-
 import express from 'express';
 import fetch from 'node-fetch';
 const solarSystem = (await import('npm-solarsystem')).default;
@@ -11,23 +8,14 @@ app.use(express.static("public"));
 
 //Main route
 app.get('/', async (req, res) => {
-  const apiKey = process.env.PIXABAY_KEY;
-  const url = `https://pixabay.com/api/?key=${apiKey}&per_page=50&orientation=horizontal&q=solar+system`;
+   let url = "https://pixabay.com/api/?key=20426927-497d14db9c234faf7d0df8317&per_page=50&orientation=horizontal&q=solar system";
+   let riResponse = await fetch(url);
+   let riData = await riResponse.json();
+   let randomNumber = Math.floor(Math.random() * riData.hits.length);
+   let randomImageURL = riData.hits[randomNumber].largeImageURL;
+   console.log(randomImageURL);
 
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Pixabay API request failed');
-
-    const data = await response.json();
-    const randomIndex = Math.floor(Math.random() * data.hits.length);
-    const randomImageURL = data.hits[randomIndex].largeImageURL;
-
-    res.render('home.ejs', { randomImageURL });
-  } catch (err) {
-    console.error('Pixabay fetch failed:', err.message);
-    // Fallback image if API fails
-    res.render('home.ejs', { randomImageURL: 'public/images/home/fallback.jpg' });
-  }
+   res.render('home.ejs', {randomImageURL});
 });
 
 //Planet route All in one
