@@ -26,6 +26,13 @@ app.get('/planet', (req, res) => {
    res.render('planetInfo.ejs', {planetInfo, planet_name});
 });
 
+// Sun route
+app.get('/sun.ejs', (req, res) => {
+   let sunInfo = solarSystem.getSun();
+   res.render('sun.ejs', {sunInfo});
+});
+
+
 // NASAPOD route
 app.get('/NASAPOD.ejs', (req, res) => {
    res.render('NASAPOD.ejs');

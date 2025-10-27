@@ -20,6 +20,10 @@
     box-shadow: 0px -5px 15px black;
 }
 
+h6, ul, li {
+    margin-left: 2rem;
+}
+
 footer {
     border-radius: 1px;
     text-align: center;

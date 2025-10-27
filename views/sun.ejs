@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <h1 class="text-center bg-danger p-5 text-white m-0">The Solar System</h1>
+
+    <%- include("partials/navbar.ejs") %>
+    <%- include("partials/header.ejs") %>
+
+    <h2> Sun </h2>
+
+    <h6><%=sunInfo.description%></h6>
+
+    <ul>
+        <li>Radius: <%=sunInfo.radius%></li>
+        <li><a href="<%=sunInfo.websiteLink%>" target=blank >Website link:</a></li>
+    </ul> <br>
+
+    <img id="planet_Img" src="<%=sunInfo.image %>" width="300">
+
+    <%- include("partials/footer.ejs") %>
+
+</body>
+</html>
