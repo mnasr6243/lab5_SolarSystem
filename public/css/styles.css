@@ -1,35 +1,49 @@
-body {
-    color: black;
-}
-
-#randomSpaceImg {
+/* Layout for full-height pages */
+html, body {
     height: 100%;
-    width: 100%;
-    object-fit: cover;
-    box-shadow: 0px -5px 15px black;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
-#planet_Img {
-    display: block;
-    margin: 0 auto;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    height: 50%;
-    width: 50%;
-    object-fit: cover;
-    box-shadow: 0px -5px 15px black;
+/* Main content takes remaining height */
+main {
+    flex: 1;
 }
 
-h6, ul, li {
-    margin-left: 2rem;
+/* Ensure images and sections resize proportionally */
+img {
+    max-width: 100%;
+    height: auto;
 }
 
+/* Footer sticks to the bottom */
 footer {
     color: white;
-    border-radius: 1px;
     text-align: center;
-    margin-bottom: 0rem;
     padding: 1rem;
     background: linear-gradient(to bottom, black, red);
     box-shadow: 0px -5px 15px black;
+    margin-top: auto;
+}
+
+/* Keep content nicely centered and balanced */
+.container, .row, section, article, aside {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+ul, li, h6, p {
+    word-wrap: break-word;
+}
+
+/* Responsive text and spacing to adjust better on mobile*/
+h1, h2, h3, h4, h5, h6, p {
+    max-width: 100%;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .p-5 { padding: 2rem !important; }
+    h1 { font-size: 1.75rem; }
 }
